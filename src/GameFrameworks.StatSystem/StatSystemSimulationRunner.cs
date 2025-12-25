@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using GameFrameworks.StatSystem.Core;
 using GameFrameworks.StatSystem.SimulationRunner;
 
@@ -12,7 +13,7 @@ internal class StatSystemSimulationRunner<TStatDefinition, TNumber>
 
     private readonly IStatContainer<TStatDefinition, TNumber> _sourceStatSystem;
 
-    private IStatContainer<TStatDefinition, TNumber> _testCopy;
+    private IStatContainer<TStatDefinition, TNumber>? _testCopy;
 
     private readonly List<Action<IStatContainer<TStatDefinition, TNumber>>> _performedActions;
 
@@ -33,6 +34,7 @@ internal class StatSystemSimulationRunner<TStatDefinition, TNumber>
     )
     {
         AssertSimulating();
+        AssertCopyExists(_testCopy);
 
         simulateAction(_testCopy);
 
@@ -114,6 +116,18 @@ internal class StatSystemSimulationRunner<TStatDefinition, TNumber>
         if (!_isSimulating)
         {
             throw new InvalidOperationException("Can't perform this operation when not simulating");
+        }
+    }
+
+    private static void AssertCopyExists(
+        [NotNull] IStatContainer<TStatDefinition, TNumber>? container
+    )
+    {
+        if (container is null)
+        {
+            throw new Exception(
+                "Copy container was null when executing operation, ensure that StartUpdate() method was called"
+            );
         }
     }
 }

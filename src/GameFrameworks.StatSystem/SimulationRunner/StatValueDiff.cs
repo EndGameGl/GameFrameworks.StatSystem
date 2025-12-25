@@ -10,9 +10,9 @@ internal class StatValueDiff<TStatDefinition, TNumber> : IStatValueDiff<TStatDef
     where TStatDefinition : IStat
     where TNumber : INumber<TNumber>
 {
-    public TStatDefinition Stat { get; init; }
+    public required TStatDefinition Stat { get; init; }
 
-    public TNumber? ValueBefore { get; init; }
+    public required TNumber? ValueBefore { get; init; }
 
-    public TNumber? ValueAfter { get; init; }
+    public required TNumber? ValueAfter { get; init; }
 }

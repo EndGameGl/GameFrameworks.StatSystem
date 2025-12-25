@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using GameFrameworks.StatSystem.Core;
+using GameFrameworks.StatSystem.StatModifierFilters;
 
 namespace GameFrameworks.StatSystem.PassProcessors;
 
@@ -16,6 +17,7 @@ public class PassProcessorCollection<TNumber> : IStatModifierPassProcessor<TNumb
 
         if (passProcessors.Length == 0)
         {
+            Filter = EmptyModifierFilter<TNumber>.Instance;
             return;
         }
 

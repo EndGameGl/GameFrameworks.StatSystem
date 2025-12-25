@@ -1,5 +1,4 @@
 ﻿using System.Numerics;
-using GameFrameworks.StatSystem;
 using GameFrameworks.StatSystem.Core;
 using GameFrameworks.StatSystem.StatValuePostProcessors;
 

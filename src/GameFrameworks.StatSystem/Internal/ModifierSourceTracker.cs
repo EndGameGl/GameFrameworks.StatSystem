@@ -17,7 +17,7 @@ internal class ModifierSourceTracker<TStatDefinition, TNumber>
         public IStatModifier<TNumber> Modifier { get; init; }
     }
 
-    private Dictionary<object, List<StatLinkWithModifier>> _statModifierSources;
+    private readonly Dictionary<object, List<StatLinkWithModifier>> _statModifierSources;
 
     public ModifierSourceTracker()
     {

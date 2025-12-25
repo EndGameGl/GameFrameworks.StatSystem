@@ -1,8 +1,7 @@
-﻿using System.Buffers;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using GameFrameworks.StatSystem.Internal;
 using GameFrameworks.StatSystem.Core;
+using GameFrameworks.StatSystem.Internal;
 
 namespace GameFrameworks.StatSystem;
 
