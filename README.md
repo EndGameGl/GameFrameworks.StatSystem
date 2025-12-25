@@ -2,6 +2,19 @@
 
 This project provides basic functionality to make generic stat container
 
+# Table of content
+- [Features](#features)
+- [How to use](#how-to-use)
+- [Initial setup](#initial-setup)
+- [Container creation](#container-creation)
+- [Stat value handlers](#stat-value-handlers)
+- [Adding and removing stats](#adding-and-removing-stats)
+- [Accessing stat values](#accessing-stat-values)
+- [Tracking stat changes](#tracking-stat-changes)
+- [Stat modifiers](#stat-modifiers)
+- [Pass processors](#pass-processors)
+- [Stat value postprocessors](#stat-value-postprocessors)
+- [Running simulations and getting diffs](#running-simulations-and-getting-diffs)
 
 ## Features
  - Supports any numeric type that implements `INumber<T>`
